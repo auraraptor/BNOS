@@ -1,0 +1,24 @@
+function synctest()
+	synchKey = KbName('t'); 
+%     gKey = KbName('g'); 
+%     rKey = KbName('r'); 
+%     yKey = KbName('y'); 
+%     bKey = KbName('b'); 
+x=1;
+while x==1
+    [ keyIsDown, timeSecs, keyCode ] = KbCheck();
+    if (keyIsDown)
+        if (strcmpi(KbName(keyCode),'r')==1||strcmpi(KbName(keyCode),'y')==1||strcmpi(KbName(keyCode),'g')==1||strcmpi(KbName(keyCode),'b')==1)
+            %if (strcmpi(KbName(keyCode),'r')||strcmpi(KbName(keyCode),'y')||strcmpi(KbName(keyCode),'g')||strcmpi(KbName(keyCode),'b'));
+            disp('yes');
+        else
+            disp(KbName(keyCode));
+        end
+        if strcmpi(KbName(keyCode),'t')
+            %             if (keyCode(synchKey) || keyCode(gKey) || keyCode(rKey) || keyCode(yKey) || keyCode(bKey))
+            %                 x=0;
+            disp('synch key');
+            break;
+        end
+    end
+end

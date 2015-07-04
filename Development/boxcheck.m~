@@ -1,0 +1,16 @@
+function boxcheck()
+ t=10
+startSecs = GetSecs
+num2str(startSecs)
+while (GetSecs - startSecs < t) % the t sets total time allotted per wav file        
+    [ keyIsDown, timeSecs, keyCode ] = KbCheck;
+    if keyIsDown
+                secs = num2str(timeSecs - startSecs);
+        secs
+       
+    pause(1);
+        %num2str(GetSecs)
+
+end
+
+end
